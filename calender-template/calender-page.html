@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/index.global.min.js'></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        var calendarEl = document.getElementById('calendar');
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth',
+          initialDate: '2023-02-07',
+          headerToolbar: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'dayGridMonth,timeGridWeek,timeGridDay'
+          },
+            events: [
+            {
+            title: 'All Day Event',
+            start: '2023-02-01'
+            },
+            ]
+        });    
+        calendar.render();
+      });
+    </script>
+    <link rel="stylesheet" href="cal-template.css">
+  </head>
+  <body>
+    <header>
+        <h1>Bed Booking Display</h1>
+        <button type="button">New Booking</button>
+    </header>
+    <div id='calendar'></div>
+  </body>
+</html>
