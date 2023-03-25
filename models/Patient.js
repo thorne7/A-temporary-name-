@@ -9,31 +9,31 @@ Patient.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
-            autoIncrement: true,
+            autoIncrement: true
         },
         first_name:{
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: false
         },
         last_name:{
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: false
         },
         postcode:{
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: false
         },
         phone:{
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: false
         },
         date_admitted:{
             type: DataTypes.DATE,
-            allowNull: false,
+            allowNull: false
         },
         date_discharge:{
             type: DataTypes.DATE,
-            allowNull: false,
+            allowNull: false
         },
         // user_id: {
         //   type: DataTypes.INTEGER,
@@ -46,16 +46,16 @@ Patient.init(
             type: DataTypes.INTEGER,
             references: {
                 model: 'doctor',
-                key: 'id',
-            },
-        },
+                key: 'id'
+            }
+        }
     },
     {
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'patient',
+        modelName: 'patient'
     }
 );
 

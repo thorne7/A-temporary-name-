@@ -20,15 +20,18 @@ const seedDatabase = async () => {
     individualHooks: true,
     returning: true,
   });
-  const medicalrecord = await MedicalRecord.bulkCreate(medicalRecordData, {
+
+  const staff = await Staff.bulkCreate(staffData, {
     individualHooks: true,
     returning: true,
   });
+
   const patient = await Patient.bulkCreate(patientData, {
     individualHooks: true,
     returning: true,
   });
-  const staff = await Staff.bulkCreate(staffData, {
+
+  const medicalrecord = await MedicalRecord.bulkCreate(medicalRecordData, {
     individualHooks: true,
     returning: true,
   });
