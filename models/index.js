@@ -51,10 +51,11 @@ Staff.belongsTo(User, {
 // //Links the patient table to bed table.
 // Patient.hasOne(Bed, {
 //     foreignKey: 'patient_id',
+//     onDelete: 'CASCADE'
 // });
 
 // //Links the bed table to patient.
-// Bed.belongsToMany (Patient, {
+// Bed.belongsTo(Patient, {
 //     foreignKey: 'patient_id',
 // });
 
