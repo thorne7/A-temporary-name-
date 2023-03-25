@@ -2,34 +2,37 @@
     {
         "first_name":"Stewart",
         "last_name":"Johnson",
-        "speciality":"cardiotherapy",
+        "speciality":"Cardiotherapy",
         "user_id":1
     },
-     {
+
+    {
         "first_name":"Krystal",
         "last_name":"Meyers",
-        "speciality":"phsiotherapy",
+        "speciality":"Phsiotherapy",
         "user_id":2
     },
-     {
+
+    {
         "first_name":"Ian",
         "last_name":"Kelly",
-        "speciality":"pediatrician",
+        "speciality":"Pediatrician",
         "user_id":3
     },
-     {
+
+    {
         "first_name":"Harry",
         "last_name":"Cornish",
-        "speciality":"psychiatry",
+        "speciality":"Psychiatry",
         "user_id":4
     },
-     {
+
+    {
         "first_name":"Gabrielle",
         "last_name":"Lambert",
-        "speciality":"surgery",
+        "speciality":"Surgery",
         "user_id":5
     }
-
 ]
 
 

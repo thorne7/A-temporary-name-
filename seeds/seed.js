@@ -6,7 +6,7 @@ const medicalRecordData = require('./medicalRecordData.json');
 const patientData = require('./patientData.json');
 const staffData = require('./staffData.json');
 const userData = require('./userData.json');
-
+const bedData = require('./bedData');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -20,20 +20,26 @@ const seedDatabase = async () => {
     individualHooks: true,
     returning: true,
   });
-  const medicalrecord = await MedicalRecord.bulkCreate(medicalRecordData, {
-    individualHooks: true,
-    returning: true,
-  });
-  const patient = await Patient.bulkCreate(patientData, {
-    individualHooks: true,
-    returning: true,
-  });
+
   const staff = await Staff.bulkCreate(staffData, {
     individualHooks: true,
     returning: true,
   });
 
- 
+  const patient = await Patient.bulkCreate(patientData, {
+    individualHooks: true,
+    returning: true,
+  });
+
+  const medicalrecord = await MedicalRecord.bulkCreate(medicalRecordData, {
+    individualHooks: true,
+    returning: true,
+  });
+
+  const bed = await Bed.bulkCreate(bedData, {
+    individualHooks: true,
+    returning: true,
+  });
 
   process.exit(0);
 };
