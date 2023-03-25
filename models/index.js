@@ -6,27 +6,27 @@ const MedicalRecord = require('./MedicalRecord');
 const Bed = require('./Bed');
 const Calender = require('./Calender');
 
-// //Links user table to doctor table.
-// User.hasOne(Doctor, {
-//     foreignKey: 'user_id',
-//     onDelete: 'CASCADE'
-// });
+//Links user table to doctor table.
+User.hasOne(Doctor, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+});
 
-// //Links doctor table to user table.
-// Doctor.belongsTo(User, {
-//     foreignKey: 'user_id',
-// });
+//Links doctor table to user table.
+Doctor.belongsTo(User, {
+    foreignKey: 'user_id',
+});
 
-// //Links user table to staff table.
-// User.hasOne(Staff, {
-//     foreignKey: 'user_id',
-//     onDelete: 'CASCADE'
-// });
+//Links user table to staff table.
+User.hasOne(Staff, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE'
+});
 
-// //Links staff table to user table.
-// Staff.belongsTo(User, {
-//     foreignKey: 'user_id',
-// });
+//Links staff table to user table.
+Staff.belongsTo(User, {
+    foreignKey: 'user_id',
+});
 
 // //Links the patient table to doctor.
 // Doctor.hasMany(Patient, {

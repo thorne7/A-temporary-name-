@@ -11,18 +11,22 @@ Doctor.init(
             primaryKey: true,
             autoIncrement: true
         },
-        first_name:{
+
+        first_name: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        last_name:{
+
+        last_name: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        speciality:{
+
+        speciality: {
             type: DataTypes.STRING,
             allowNull: false
         },
+        
         user_id: {
             type: DataTypes.INTEGER,
             references: {
