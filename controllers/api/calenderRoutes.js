@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const { Bed, Patient, User } = require('../models');
+const { Bed, Patient, User } = require('../../models');
 
-// get all bookings for path "api/beds"
-router.get('/beds/:id', async (req, res) => {
+// get all bookings for path "api/bed"
+router.get('/:id', async (req, res) => {
   try {
     const selectbedData = await Bed.findByPk(req.params.id, {
       include: [
@@ -23,8 +23,8 @@ router.get('/beds/:id', async (req, res) => {
 
     const beds = selectbedData.map((bed) =>
       bed.get({ plain: true })
-      res.json(beds)
     );
+    res.status(200).json(beds);
 
     // res.render('homepage', {
     //   beds,
@@ -34,3 +34,5 @@ router.get('/beds/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+module.exports = router;
