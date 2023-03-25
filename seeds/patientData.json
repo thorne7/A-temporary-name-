@@ -4,6 +4,8 @@
         "last_name":"Sharp",
         "postcode":"5061",
         "phone": "0412345678",
+        "date_admitted": "2023-02-25",
+        "date_discharge": "2023-03-25",
         "doctor_id":1
         
     },
@@ -12,6 +14,8 @@
         "last_name":"Turner",
         "postcode":"5012",
         "phone": "0412121223",
+        "date_admitted": "2023-02-25",
+        "date_discharge": "2023-03-25",
         "doctor_id":2
         
     },
@@ -20,6 +24,8 @@
         "last_name":"Bond",
         "postcode":"5023",
         "phone": "0412332454",
+        "date_admitted": "2023-02-25",
+        "date_discharge": "2023-03-25",
         "doctor_id":3
         
     },
@@ -28,6 +34,8 @@
         "last_name":"Marshall",
         "postcode":"5014",
         "phone": "0412376598",
+        "date_admitted": "2023-02-25",
+        "date_discharge": "2023-03-25",
         "doctor_id":4
         
     },
@@ -36,6 +44,8 @@
         "last_name":"Taylor",
         "postcode":"5023",
         "phone": "0412365975",
+        "date_admitted": "2023-02-25",
+        "date_discharge": "2023-03-25",
         "doctor_id":5
         
     },
@@ -44,6 +54,8 @@
         "last_name":"Watson",
         "postcode":"5031",
         "phone": "0412716280",
+        "date_admitted": "2023-02-25",
+        "date_discharge": "2023-03-25",
         "doctor_id":1
         
     },
@@ -52,6 +64,8 @@
         "last_name":"Miller",
         "postcode":"5032",
         "phone": "0417391739",
+        "date_admitted": "2023-02-25",
+        "date_discharge": "2023-03-25",
         "doctor_id":2
         
     },
@@ -60,6 +74,8 @@
         "last_name":"Bower",
         "postcode":"5070",
         "phone": "0428893173",
+        "date_admitted": "2023-02-25",
+        "date_discharge": "2023-03-25",
         "doctor_id":3
         
     },
@@ -68,6 +84,8 @@
         "last_name":"Robertson",
         "postcode":"5060",
         "phone": "0428193028",
+        "date_admitted": "2023-02-25",
+        "date_discharge": "2023-03-25",
         "doctor_id":4
         
     },
@@ -76,6 +94,8 @@
         "last_name":"Johnston",
         "postcode":"5046",
         "phone": "0427183920",
+        "date_admitted": "2023-02-25",
+        "date_discharge": "2023-03-25",
         "doctor_id":5
         
     }
