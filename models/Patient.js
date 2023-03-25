@@ -27,6 +27,14 @@ Patient.init(
             type: DataTypes.INTEGER,
             allowNull: false,
         },
+        date_admitted:{
+            type: DataTypes.DATE,
+            allowNull: false,
+        },
+        date_discharge:{
+            type: DataTypes.DATE,
+            allowNull: false,
+        },
         user_id: {
           type: DataTypes.INTEGER,
           references: {

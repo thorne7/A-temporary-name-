@@ -11,14 +11,6 @@ Bed.init(
           primaryKey: true,
           autoIncrement: true,
         },
-        date_admitted:{
-            type: DataTypes.DATE,
-            allowNull: false,
-        },
-        date_discharge:{
-            type: DataTypes.DATE,
-            allowNull: false,
-        },
         patient_id: {
           type: DataTypes.INTEGER,
           references: {
