@@ -19,12 +19,12 @@ Patient.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        address:{
+        postcode:{
             type: DataTypes.STRING,
             allowNull: false,
         },
         phone:{
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         date_admitted:{
@@ -35,13 +35,13 @@ Patient.init(
             type: DataTypes.DATE,
             allowNull: false,
         },
-        user_id: {
-          type: DataTypes.INTEGER,
-          references: {
-            model: 'user',
-            key: 'id',
-          },
-        },
+        // user_id: {
+        //   type: DataTypes.INTEGER,
+        //   references: {
+        //     model: 'user',
+        //     key: 'id',
+        //   },
+        // },
         doctor_id:{
             type: DataTypes.INTEGER,
             references: {
