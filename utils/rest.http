@@ -2,11 +2,10 @@ GET http://localhost:3001
 
 ###
 
-POST http://localhost:3001/login
+POST http://localhost:3001//api/users/login
 Content-Type: application/json
 
 {
-    "email": "test1@email.com",
-    "password": "123456789",
-    "type": "doctor"
+    "email": "sjc@gmail.com",
+    "password": "123412345"
 }
