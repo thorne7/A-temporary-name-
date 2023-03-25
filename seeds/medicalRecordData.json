@@ -1,0 +1,42 @@
+[
+    {
+        "condition":"cancer",
+        "patient_id":1
+    },
+    {
+        "condition":"flu",
+        "patient_id":2
+    },
+    {
+        "condition":"dehydration",
+        "patient_id":3
+    },
+    {
+        "condition":"melanoma",
+        "patient_id":4
+    },
+    {
+        "condition":"covid",
+        "patient_id":5
+    },
+    {
+        "condition":"mental health",
+        "patient_id":6
+    },
+    {
+        "condition":"atheletes foot",
+        "patient_id":7
+    },
+    {
+        "condition":"asthma",
+        "patient_id":8
+    },
+    {
+        "condition":"toothache",
+        "patient_id":9
+    },
+    {
+        "condition":"athritis",
+        "patient_id":10
+    }
+]

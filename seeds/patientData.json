@@ -1,0 +1,82 @@
+[
+    {
+        "first_name":"Karen",
+        "last_name":"Sharp",
+        "postcode":"5061",
+        "phone": "0412345678",
+        "doctor_id":1
+        
+    },
+    {
+        "first_name":"Joshua",
+        "last_name":"Turner",
+        "postcode":"5012",
+        "phone": "0412121223",
+        "doctor_id":2
+        
+    },
+    {
+        "first_name":"Victor",
+        "last_name":"Bond",
+        "postcode":"5023",
+        "phone": "0412332454",
+        "doctor_id":3
+        
+    },
+    {
+        "first_name":"Thomas",
+        "last_name":"Marshall",
+        "postcode":"5014",
+        "phone": "0412376598",
+        "doctor_id":4
+        
+    },
+    {
+        "first_name":"Colin",
+        "last_name":"Taylor",
+        "postcode":"5023",
+        "phone": "0412365975",
+        "doctor_id":5
+        
+    },
+    {
+        "first_name":"Max",
+        "last_name":"Watson",
+        "postcode":"5031",
+        "phone": "0412716280",
+        "doctor_id":1
+        
+    },
+    {
+        "first_name":"Jake",
+        "last_name":"Miller",
+        "postcode":"5032",
+        "phone": "0417391739",
+        "doctor_id":2
+        
+    },
+    {
+        "first_name":"Jennifer",
+        "last_name":"Bower",
+        "postcode":"5070",
+        "phone": "0428893173",
+        "doctor_id":3
+        
+    },
+    {
+        "first_name":"Jack",
+        "last_name":"Robertson",
+        "postcode":"5060",
+        "phone": "0428193028",
+        "doctor_id":4
+        
+    },
+    {
+        "first_name":"Piers",
+        "last_name":"Johnston",
+        "postcode":"5046",
+        "phone": "0427183920",
+        "doctor_id":5
+        
+    }
+]
