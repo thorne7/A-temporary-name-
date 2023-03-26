@@ -34,17 +34,17 @@ Doctor.hasMany(Patient, {
 });
 
 //Links the doctor table to patient.
-Patient.belongsToMany (Doctor, {
+Patient.belongsTo (Doctor, {
     foreignKey: 'doctor_id',
 });
 
 //Links the patient table to medical record table.
-Patient.hasMany(MedicalRecord, {
+Patient.hasOne(MedicalRecord, {
     foreignKey: 'patient_id',
 });
 
 //Links the medical record table to patient.
-MedicalRecord.belongsToMany (Patient, {
+MedicalRecord.belongsTo (Patient, {
     foreignKey: 'patient_id',
 });
 
@@ -59,33 +59,33 @@ Bed.belongsTo(Patient, {
     foreignKey: 'patient_id',
 });
 
-//Links the bed table to Calender.
-Bed.hasOne(Calender, {
-    foreignKey: 'bed_id',
-    onDelete: 'CASCADE'
-});
+// //Links the bed table to Calender.
+// Bed.hasOne(Calender, {
+//     foreignKey: 'bed_id',
+//     onDelete: 'CASCADE'
+// });
 
-//Links the calender table to bed.
-Calender.belongsTo(Bed, {
-    foreignKey: 'bed_id',
-});
+// //Links the calender table to bed.
+// Calender.belongsTo(Bed, {
+//     foreignKey: 'bed_id',
+// });
 
-Calender.hasMany(MedicalRecord, {
-    through: {
-        model: Patient,
-        unique: false
-      },
-      as: 'conditions',
-      foreignKey: 'patient_id'
-});
+// Calender.hasMany(MedicalRecord, {
+//     through: {
+//         model: Patient,
+//         unique: false
+//       },
+//       as: 'conditions',
+//       foreignKey: 'patient_id'
+// });
 
-MedicalRecord.belongsToMany(Calender, {
-    through: {
-        model: Patient,
-        unique: false
-      },
-      as: 'conditions',
-      foreignKey: 'patient_id'
-});
+// MedicalRecord.belongsToMany(Calender, {
+//     through: {
+//         model: Patient,
+//         unique: false
+//       },
+//       as: 'conditions',
+//       foreignKey: 'patient_id'
+// });
 
 module.exports = {User, Doctor, Staff, Patient, MedicalRecord, Bed, Calender};
