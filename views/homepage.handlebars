@@ -1,1 +1,17 @@
-<h1>Home Page</h1>
+{{#each beds as |data| }}
+
+    <div>beds.count</div>
+
+    {{!-- {{#if data.bed}}       
+        <h2>Bed ID: {{data.bed['Bed ID']}}</h2>
+    {{else}}
+        <h2>Bed ID: Null</h2>
+    {{/if}} --}}
+
+    <div>Patient Name: {{data['First Name']}} {{data['Last Name']}}</div>
+    <div>Admit Date: {{data['Admit Date']}}</div>
+    <div>Dischage Date: {{data['Dischage Date']}}</div>
+    <div>Doctor Name: {{data.doctor['First Name']}} {{data.doctor['Last Name']}}</div>
+    <div>Medical Record: {{data.medical_record['Medical Condition']}}</div>
+    <div></div>
+{{/each}}
