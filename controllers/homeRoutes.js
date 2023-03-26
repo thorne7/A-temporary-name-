@@ -8,9 +8,10 @@ router.get('/', userAuth, async (req, res) => {
 
     try{
 
-        const beds = getBedData(req.session.role);
+        //Gets the bed data including patient details.
+        const beds = await getBedData(req.session.role);
 
-        //Renders home page.
+        //Renders home page with bed data.
         res.render('homepage', {beds:beds});
 
     } catch (err) {
@@ -18,15 +19,17 @@ router.get('/', userAuth, async (req, res) => {
   }
 });
 
-router.get('/login', (req, res) => {
+router.get('/login', async (req, res) => {
 
     try{
 
         // If the user is already logged in, redirect the request to home route.
         if (req.session.logged_in) {
 
-            const beds = getBedData(req.session.role);
+            //Gets the bed data including patient details.
+            const beds = await getBedData(req.session.role);
 
+            //Renders home page with bed data.
             res.render('homepage', {beds:beds});
             return;
         }
@@ -39,10 +42,12 @@ router.get('/login', (req, res) => {
     }
   });
 
+//Gets the bed data including patient details.
 async function getBedData(role){
 
     let beds = [];
 
+    //Sqquelize query to get bed id, patient data and doctor name.
     const bedData = await Patient.findAll({
         attributes:[
             ['first_name', 'First Name'],
@@ -75,6 +80,7 @@ async function getBedData(role){
     // Serialize data so the template can read it
     const allBeds = bedData.map((bed) => bed.get({ plain: true }));
 
+    //Loop through the data and generate new array for home page.
     for (let i = 0; i < allBeds.length; i++) {
 
         const bedInfo = allBeds[i];
