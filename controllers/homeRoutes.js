@@ -17,8 +17,6 @@ router.get('/', userAuth, async (req, res) => {
         //Only displays medical history if logged in user is a doctor.
         if(req.session.role === role[0]) showHistory = true;
 
-        console.log(`Logged in: ${showHistory}`);
-
         //Renders home page with bed data.
         res.render('homepage', {beds:beds, show_History: showHistory});
 
@@ -39,8 +37,6 @@ router.get('/login', async (req, res) => {
 
              //Only displays medical history if logged in user is a doctor.
             if(req.session.role === role[0]) showHistory = true;
-
-            console.log(`Logged in: ${showHistory}`);
 
             //Renders home page with bed data.
             res.render('homepage', {beds:beds, show_History: showHistory});
