@@ -1,42 +1,42 @@
 [
     {
-        "condition":"cancer",
+        "condition":"Cancer",
         "patient_id":1
     },
     {
-        "condition":"flu",
+        "condition":"Flu",
         "patient_id":2
     },
     {
-        "condition":"dehydration",
+        "condition":"Dehydration",
         "patient_id":3
     },
     {
-        "condition":"melanoma",
+        "condition":"Melanoma",
         "patient_id":4
     },
     {
-        "condition":"covid",
+        "condition":"Covid-19",
         "patient_id":5
     },
     {
-        "condition":"mental health",
+        "condition":"Mental Health",
         "patient_id":6
     },
     {
-        "condition":"atheletes foot",
+        "condition":"Atheletes Foot",
         "patient_id":7
     },
     {
-        "condition":"asthma",
+        "condition":"Asthma",
         "patient_id":8
     },
     {
-        "condition":"toothache",
+        "condition":"Toothache",
         "patient_id":9
     },
     {
-        "condition":"athritis",
+        "condition":"Athritis",
         "patient_id":10
     }
 ]
