@@ -14,10 +14,13 @@ router.get('/', userAuth, async (req, res) => {
 
         let showHistory = false;
 
+        //Only displays medical history if logged in user is a doctor.
         if(req.session.role === role[0]) showHistory = true;
 
+        console.log(`Logged in: ${showHistory}`);
+
         //Renders home page with bed data.
-        res.render('homepage', {beds:beds, showHistory: showHistory});
+        res.render('homepage', {beds:beds, show_History: showHistory});
 
     } catch (err) {
     res.status(500).json(err);
@@ -34,8 +37,13 @@ router.get('/login', async (req, res) => {
             //Gets the bed data including patient details.
             const beds = await getBedData();
 
+             //Only displays medical history if logged in user is a doctor.
+            if(req.session.role === role[0]) showHistory = true;
+
+            console.log(`Logged in: ${showHistory}`);
+
             //Renders home page with bed data.
-            res.render('homepage', {beds:beds, showHistory: showHistory});
+            res.render('homepage', {beds:beds, show_History: showHistory});
             return;
         }
 
