@@ -1,0 +1,59 @@
+[
+    {
+        "email": "sjc@gmail.com",
+        "password":"123412345",
+        "role": "doctor"
+    },
+
+    {
+        "email":"kmp@gmail.com",
+        "password":"123412345",
+        "role": "doctor"
+    },
+
+    {
+        "email":"ikp@gmail.com",
+        "password":"123412345",
+        "role": "doctor"
+    },
+
+    {
+        "email":"hcp@gmail.com",
+        "password":"123412345",
+        "role": "doctor"
+    },
+
+    {
+        "email": "gls@gmail.com",
+        "password":"123412345",
+        "role": "doctor"
+    },
+    {
+        "email":"lso@gmail.com",
+        "password":"123412345",
+        "role": "staff"
+    },
+
+    {
+        "email":"odd@gmail.com",
+        "password":"123412345",
+        "role": "staff"
+    },
+    {
+        "email":"jgp@gmail.com",
+        "password":"123412345",
+        "role": "staff"
+    },
+
+    {
+        "email":"bjc@gmail.com",
+        "password":"123412345",
+        "role": "staff"
+    },
+
+    {
+        "email":"jrg@gmail.com",
+        "password":"123412345",
+        "role": "staff"
+    }
+]

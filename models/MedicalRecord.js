@@ -9,26 +9,26 @@ MedicalRecord.init(
           type: DataTypes.INTEGER,
           allowNull: false,
           primaryKey: true,
-          autoIncrement: true,
+          autoIncrement: true
         },
         condition:{
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: false
         },
         patient_id: {
           type: DataTypes.INTEGER,
           references: {
             model: 'patient',
-            key: 'id',
-          },
-        },
+            key: 'id'
+          }
+        }
     },
     {
         sequelize,
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'medical_record',
+        modelName: 'medical_record'
     }
 );
 
