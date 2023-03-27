@@ -25,6 +25,31 @@ router.get('/:id', userAuth, async (req, res) => {
   }
 });
 
+router.post('/:patients', async (req, res) => {
+  try {
+    // create a new patient object with data from the request body
+    const newPatient = new Patient({
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
+      postcode: req.body.postcode,
+      phone: req.body.phone,
+      user_id: req.body.user_id,
+      doctor_id: req.body.doctor_id
+      // other patient fields here
+    });
+
+    // save the new patient to the database
+    const savedPatient = await newPatient.save();
+
+    // send a response indicating success and the new patient's ID
+    res.status(201).json({ success: true, patientId: savedPatient._id });
+  } catch (err) {
+    // handle any errors and send an error response
+    console.error(err);
+    res.status(500).json({ success: false, message: 'Failed to create new patient.' });
+  }
+});
+
 async function getData() {
   patientEvents = [];
   const selectbedData = await Patient.findAll({
