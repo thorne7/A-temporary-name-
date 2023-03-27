@@ -11,14 +11,6 @@ Bed.init(
         primaryKey: true,
         autoIncrement: true
       },
-      patient_id: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-        references: {
-          model: 'patient',
-          key: 'id'
-        }
-      }
     },
     {
         sequelize,

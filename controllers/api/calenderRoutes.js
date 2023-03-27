@@ -4,44 +4,18 @@ const userAuth = require('../../utils/auth');
 
 // get all bookings for path "api/beds"
 router.get('/:id', userAuth, async (req, res) => {
+  
   try {
-    const selectbedData = await Patient.findByPk(req.params.id, {
-      attributes:[
-        ['first_name', 'First Name'],
-        ['last_name', 'Last Name'],
-        ['date_admitted', 'Admit Date'],
-        ['date_discharge', 'Dischage Date']
-      ],
-  });
-  const selectBed = selectbedData.get({ plain: true });
-
-router.post('/:Patient', async (req, res) => {
-  try {
-    //create a new patient oject with adata from the requested body
-    const newPatientData = await new Patient({
-      name: req.body.name,
-      email:req.body.email,
-      postcode:req.body.postcode,
-      phone:req.body.phone,
-      user_id:req.body.user_id,
-      doctor:req.body.doctor_id,
-    });
-
-    req.status(200).json(newPatientData);
-  } catch (err) {
-    console.error('Failed to create patient:', err);
-    res.status(500).json({ message: 'Failed to create patient.' });
-  }
-});
-
-module.exports = router;
+    const data = await getData();
+    res.render('calender', {data:patientBookings});
+  
 // /// use differencebetween dates method (not the official name) from (vanilla or dayJS) to get the number of days
 // /// date admitted is the start date of the event of the calender
+
 // /// use string methods to join patient first name and last name and make it the name of the event
 // /// format this information into objects compatable with full calender
 // /// use res.render to render the info the partial
 
-    console.log(selectBed);
     // res.render('homepage', {
     //   beds,
     // });
@@ -50,5 +24,32 @@ module.exports = router;
     res.status(500).json(err);
   }
 });
+
+async function getData() {
+  patientEvents = [];
+  const selectbedData = await Patient.findAll({
+    where: bed_id = req.params.id,
+    attributes: [ first_name, last_name, date_admitted, date_discharge ]
+  });
+  const selectBed = selectbedData.map((patient) => patient.get({ plain: true }));
+
+  console.log(selectBed);
+
+    for (i=0; i < selectBed.length; i++) {
+      var selectedPatient = selectBed[i];
+      const eventObj = {
+        title: selectedPatient.first_name + selectedPatient.last_name,
+        start: date_admitted,
+        end: date_discharged,
+        allDay: true
+      }
+    
+    patientEvents.push(eventObj);
+    console.log(eventObj);
+    }
+
+      console.log(patientEvents);
+      return patientEvents;
+}
 
 module.exports = router;

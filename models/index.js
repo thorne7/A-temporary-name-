@@ -50,42 +50,19 @@ MedicalRecord.belongsTo (Patient, {
 
 //Links the patient table to bed table.
 Patient.hasOne(Bed, {
-    foreignKey: 'patient_id',
+    foreignKey: 'bed_id',
     onDelete: 'CASCADE'
 });
 
 //Links the bed table to patient.
-Bed.belongsTo(Patient, {
-    foreignKey: 'patient_id',
+Bed.belongsToMany(Patient, {
+    through: {
+        model: Calender,
+        unique: false
+    },  
+
+    as: 'Booking',
+    foreignKey: 'bed_id',
 });
-
-// //Links the bed table to Calender.
-// Bed.hasOne(Calender, {
-//     foreignKey: 'bed_id',
-//     onDelete: 'CASCADE'
-// });
-
-// //Links the calender table to bed.
-// Calender.belongsTo(Bed, {
-//     foreignKey: 'bed_id',
-// });
-
-// Calender.hasMany(MedicalRecord, {
-//     through: {
-//         model: Patient,
-//         unique: false
-//       },
-//       as: 'conditions',
-//       foreignKey: 'patient_id'
-// });
-
-// MedicalRecord.belongsToMany(Calender, {
-//     through: {
-//         model: Patient,
-//         unique: false
-//       },
-//       as: 'conditions',
-//       foreignKey: 'patient_id'
-// });
 
 module.exports = {User, Doctor, Staff, Patient, MedicalRecord, Bed, Calender};
