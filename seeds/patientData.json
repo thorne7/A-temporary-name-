@@ -6,7 +6,8 @@
         "phone": "0412345678",
         "date_admitted": "2023-02-25",
         "date_discharge": "2023-03-25",
-        "doctor_id":1
+        "doctor_id":1,
+        "bed_id":1
         
     },
     {
@@ -16,7 +17,8 @@
         "phone": "0412121223",
         "date_admitted": "2023-02-25",
         "date_discharge": "2023-03-25",
-        "doctor_id":2
+        "doctor_id":2,
+        "bed_id":2
         
     },
     {
@@ -26,7 +28,8 @@
         "phone": "0412332454",
         "date_admitted": "2023-02-25",
         "date_discharge": "2023-03-25",
-        "doctor_id":3
+        "doctor_id":3,
+        "bed_id":3
         
     },
     {
@@ -36,7 +39,8 @@
         "phone": "0412376598",
         "date_admitted": "2023-02-25",
         "date_discharge": "2023-03-25",
-        "doctor_id":4
+        "doctor_id":4,
+        "bed_id":4
         
     },
     {
