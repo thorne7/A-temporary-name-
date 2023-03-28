@@ -28,13 +28,15 @@ router.get('/:id', userAuth, async (req, res) => {
 router.post('/:patients', async (req, res) => {
   try {
     // create a new patient object with data from the request body
-    const newPatient = new Patient({
+    const newPatient = new Patient.create({
+      id: req.body.id,
       firstname: req.body.firstname,
       lastname: req.body.lastname,
       postcode: req.body.postcode,
       phone: req.body.phone,
       user_id: req.body.user_id,
-      doctor_id: req.body.doctor_id
+      doctor_id: req.body.doctor_id,
+      bed_id: req.body.bed_id
       // other patient fields here
     });
 
