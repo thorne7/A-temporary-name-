@@ -1,3 +1,5 @@
-const role = ['doctor', 'staff'];
+const roles = ['doctor', 'staff'];
 
-module.exports = role;
+const totalBeds = 10;
+
+module.exports = {roles, totalBeds};

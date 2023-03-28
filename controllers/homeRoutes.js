@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const roles = require('../utils/constants');
+const {roles, totalBeds} = require('../utils/constants');
 const router = require('express').Router();
 const { Doctor, MedicalRecord, Patient} = require('../models');
 const userAuth = require('../utils/auth');
@@ -15,7 +15,7 @@ router.get('/', userAuth, async (req, res) => {
         let showHistory = false;
 
         //Only displays medical history if logged in user is a doctor.
-        if(req.session.role === role[0]) showHistory = true;
+        if(req.session.role === roles[0]) showHistory = true;
 
         //Renders home page with bed data.
         res.render('homepage', {beds:beds, show_History: showHistory});
@@ -35,8 +35,10 @@ router.get('/login', async (req, res) => {
             //Gets the bed data including patient details.
             const beds = await getBedData();
 
-             //Only displays medical history if logged in user is a doctor.
-            if(req.session.role === role[0]) showHistory = true;
+            let showHistory = false;
+
+            //Only displays medical history if logged in user is a doctor.
+            if(req.session.role === roles[0]) showHistory = true;
 
             //Renders home page with bed data.
             res.render('homepage', {beds:beds, show_History: showHistory});
@@ -99,7 +101,26 @@ async function getBedData(){
                 admit_date: `${bedInfo['Admit Date']}`,
                 discharge_Date: `${bedInfo['Dischage Date']}`,       
                 doctor_name: `${bedInfo.doctor['First Name']} ${bedInfo.doctor['Last Name']}`,
-                medical_condition: `${bedInfo.medical_record['Medical Condition']}`,
+                medical_condition: `${bedInfo.medical_record['Medical Condition']}`
+            };
+            
+            beds.push(data);
+        }
+    }
+
+    //If not all beds are allocated, adds remaining empty beds.
+    if(beds.length < 10){
+
+        //Runs the loop from bed allocated to 10.
+        for (let i = beds.length; i < totalBeds; i++) {
+            
+            const data = {
+                bed_id: `${i + 1}`,
+                patient_name: '',
+                admit_date: '',
+                discharge_Date:'',      
+                doctor_name: '',
+                medical_condition: ''
             };
             
             beds.push(data);
