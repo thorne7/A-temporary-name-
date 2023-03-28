@@ -8,7 +8,11 @@
 </head>
 <body>
     <header>
-
+        <nav>
+            {{#if logged_in}}
+                <button class="no-button" id="logout">Logout</button>
+            {{/if}}
+        </nav>
     </header>
 
     <main>
