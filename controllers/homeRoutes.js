@@ -18,7 +18,7 @@ router.get('/', userAuth, async (req, res) => {
         if(req.session.role === roles[0]) showHistory = true;
 
         //Renders home page with bed data.
-        res.render('homepage', {beds:beds, show_History: showHistory});
+        res.render('homepage', {beds:beds, show_History: showHistory, logged_in: req.session.logged_in});
 
     } catch (err) {
     res.status(500).json(err);
@@ -41,7 +41,7 @@ router.get('/login', async (req, res) => {
             if(req.session.role === roles[0]) showHistory = true;
 
             //Renders home page with bed data.
-            res.render('homepage', {beds:beds, show_History: showHistory});
+            res.render('homepage', {beds:beds, show_History: showHistory, logged_in: req.session.logged_in});
             return;
         }
 
@@ -98,8 +98,8 @@ async function getBedData(){
             const data = {
                 bed_id: `${bedInfo['Bed ID']}`,
                 patient_name: `${bedInfo['First Name']} ${bedInfo['Last Name']}`,
-                admit_date: `${bedInfo['Admit Date']}`,
-                discharge_Date: `${bedInfo['Dischage Date']}`,       
+                admit_date: `${bedInfo['Admit Date'].toLocaleDateString()}`,
+                discharge_Date: `${bedInfo['Dischage Date'].toLocaleDateString()}`,       
                 doctor_name: `${bedInfo.doctor['First Name']} ${bedInfo.doctor['Last Name']}`,
                 medical_condition: `${bedInfo.medical_record['Medical Condition']}`
             };

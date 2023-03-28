@@ -26,7 +26,11 @@
 </head>
 <body>
     <header>
-
+        <nav>
+            {{#if logged_in}}
+                <button class="no-button" id="logout">Logout</button>
+            {{/if}}
+        </nav>
     </header>
 
     <main>
@@ -37,5 +41,10 @@
         
     </footer>
     
+
+    <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+  {{/if}}
 </body>
 </html>
