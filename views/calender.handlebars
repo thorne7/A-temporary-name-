@@ -1,12 +1,13 @@
-<!DOCTYPE html>
-<html lang='en'>
-  <head>
-    <meta charset='utf-8' />
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.4/index.global.min.js'></script>
+<header>
+  <h1>Bed Booking Display</h1>
+  <button type="button">New Booking</button>
+</header>
+<div id="calendar"></div>
     <script>
     /// this gets rendered into the head of the calender page.
       document.addEventListener('DOMContentLoaded', function() {
         var calendarEl = document.getElementById('calendar');
+        console.log(calendarEl);
         var calendar = new FullCalendar.Calendar(calendarEl, {
           initialView: 'dayGridMonth',
           initialDate: '2023-02-07',
@@ -16,13 +17,9 @@
           right: 'dayGridMonth,timeGridWeek,timeGridDay'
           },
             events: 
-            {{events}}
+            {{{data}}}
         });    
         calendar.render();
       });
   </script>
-  </head>
-  <body>
-    <div id='calendar'></div>
-  </body>
-</html>
+
