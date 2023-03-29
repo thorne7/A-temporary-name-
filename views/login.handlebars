@@ -1,17 +1,46 @@
-<h2>Login</h2>
+    <section class="py-5 hero">
+      <div class="container">
+        <h1>Welcome to the Hospital Log In App</h1>
+        <p class="lead">
+          We can write something here or just delete it
+        </p>
 
-<form class="form login-form">
-    <div class="form-group">
-        <label for="email-login">email:</label>
-        <input class="form-input" type="text" id="email-login" />
-    </div>
-    <div class="form-group">
-        <label for="password-login">password:</label>
-        <input class="form-input" type="password" id="password-login" />
-    </div>
-    <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
-    </div>
-</form>
+        <div class="log-box-login">
+          <h1> User Log In</h1>
+          <form class="form login-form">
+            <div class="input-user" class="form-group">
+            <i class="fas fa-envelope" style="color: rgb(245, 241, 241);"></i>
+            <label for="email-login">Email:</label>
+            <input class="form-input" type="email" placeholder="User Email" id="email-login" />
+          </div>
+          <div class="input-user" class="form-group">
+            <i class="fas fa-key"></i>
+            <label for="password-login">Password:</label>
+            <input class="form-input" type="password" placeholder="User Password" id="password-login" />
+            <span class="hideShowPassword">
+              <i id="hide1" class="fa fa-eye"></i>
+              <i id="hide2" class="fa fa-eye-slash"></i>
+            </span>
+          </div>
+          <div class="form-group"></div>
+            <button type="submit" type="button" class="login-btn" class="btn btn-primary">Log In</button>
+          </div>
+          </form>
+        </div>
+  
+
+        {{!-- <!-- create and apply a custom class name "custom-btn" -->
+        <button class="btn btn-lg custom-btn">Log Out</button>
+      </div>--}}
+    </section> 
+
+    <script src="/js/login.js"></script>
+    <script >document.title="LogIn" </script>
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"
+  ></script>
 
 <script src="/js/login.js"></script>

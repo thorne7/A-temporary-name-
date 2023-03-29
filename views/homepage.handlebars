@@ -1,151 +1,20 @@
+<h1 class="text-center text-danger border-bottom  mt-4">Home Page</h1>
 
+{{#each beds as |bed| }}
 
-<h1>Home Page</h1>
-
-<div
-      class="modal fade"
-      id="new-patient-modal"
-      tabindex="-1"
-      aria-labelledby="new-patient-modal-label"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <form id="new-patient-form">
-            <div class="modal-header custom-modal-header">
-              <h5 class="modal-title" id="new-patient-modal-label">
-                Add a new Patient
-              </h5>
-              <button
-                type="button"
-                class="btn-close btn-close-white"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <div class="mb-3">
-                <label for="patient-firstname-input">Patient first Name</label>
-                <input
-                  type="text"
-                  id="patient-firstname-input"
-                  class="form-control"
-                  placeholder="Enter the patient's first name"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="patient-secondname-input">Patient second Name</label>
-                <input
-                  type="text"
-                  id="patient-secondname-input"
-                  class="form-control"
-                  placeholder="Enter the patient's second name"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="postcode">Postcode</label>
-                <input
-                  type="text"
-                  id="postcode"
-                  class="form-control"
-                  placeholder="Enter the patient's postcode"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="phone">Patient's phone number</label>
-                <input
-                  type="text"
-                  id="patientphonenumber"
-                  class="form-control"
-                  placeholder="Enter the patient's phone number"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="dateadmitted">Date admitted</label>
-                <input
-                  type="text"
-                  id="dateadmitted"
-                  class="form-control"
-                  placeholder="Enter the patient's admission date"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="datedischarged">Date datedischarged</label>
-                <input
-                  type="text"
-                  id="datedischarged"
-                  class="form-control"
-                  placeholder="Enter the patient's discharge date"
-                  required
-                />
-              </div>
-               <select id="doctor-type" class="form-select">
-                  <option value="Stewart Johnson">Stewart Johnson</option>
-                  <option value="Krystal Meyers">Krystal Meyers</option>
-                  <option value="Ian Kelly">  Ian Kelly</option>
-                  <option value="Harry Cornish">Harry Cornish</option>
-                  <option value="Gabrielle Lambert">Gabrielle Lambert</option>
-        
-                </select>
-              
-              
-              <div class="mb-3">
-                <label for="medicalcondition">Medical Condition</label>
-                <input
-                  type="date"
-                  id="medicalcondition"
-                  class="form-control"
-                  required
-                />
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-outline-secondary"
-                data-bs-dismiss="modal"
-              >
-                Cancel
-              </button>
-              <button
-                type="submit"
-                class="btn btn-custom"
-                data-bs-dismiss="modal"
-              >
-                Add Patient
-              </button>
-            </div>
-          </form>
+    <div class="card bed-card mt-4 shadow">
+        <h2 class="card-header bg-info text-white">Bed ID: {{bed.bed_id}}</h2>
+        <div class="card-body">
+            <ul class="list-group"></ul>
+            <div class="list-group">Patient Name: {{bed.patient_name}}</li>
+            <li class="list-group-item">Admit Date: {{bed.admit_date}}</li>
+            <li class="list-group-item">Dischage Date: {{bed.discharge_Date}}</li>
+            <li class="list-group-item">Doctor Name: {{bed.doctor_name}}</li>
+            {{#if @root.show_History}}
+                <li class="list-group-item">Medical Condition: {{bed.medical_condition}}</li>
+            {{/if}}
         </div>
-      </div>
-    </div>
-
-
-<div id="bed-card-container">
-  {{#each beds as |bed| }}
-
-      <div class="bed-card" data-index="{{bed.bed_id}}">
-          <h2>Bed ID: {{bed.bed_id}}</h2>
-          <div>Patient Name: {{bed.patient_name}}</div>
-          <div>Admit Date: {{bed.admit_date}}</div>
-          <div>Dischage Date: {{bed.discharge_Date}}</div>
-          <div>Doctor Name: {{bed.doctor_name}}</div>
-          {{#if @root.show_History}}
-              <div>Medical Condition: {{bed.medical_condition}}</div>
-          {{/if}}
-          <br>
-      </div>
-
-  {{/each}}
-</div>
-<script>
-  var myModal = new bootstrap.Modal(document.getElementById('new-patient-modal'))
-</script>
+{{/each}}
 <script src = "/js/homepage.js">
   
 </script>
