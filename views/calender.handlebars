@@ -30,22 +30,22 @@
           </div>
           <div class="mb-3">
             <label for="dateadmitted">Date admitted</label>
-            <input type="text" id="dateadmitted" class="form-control" placeholder="Enter the patient's admission date"/>
+            <input type="date" id="date-admit-input" class="form-control"/>
           </div>
           <div class="mb-3">
-            <label for="datedischarged">Date datedischarged</label>
-            <input type="text" id="datedischarged" class="form-control" placeholder="Enter the patient's discharge date"/>
+            <label for="datedischarged">Date discharged</label>
+            <input type="date" id="date-discharge-input" class="form-control"/>
           </div>
             <select id="doctor-type" class="form-select">
-              <option value="Stewart Johnson">Stewart Johnson</option>
-              <option value="Krystal Meyers">Krystal Meyers</option>
-              <option value="Ian Kelly">  Ian Kelly</option>
-              <option value="Harry Cornish">Harry Cornish</option>
-              <option value="Gabrielle Lambert">Gabrielle Lambert</option>
+              <option value="1">Stewart Johnson</option>
+              <option value="2">Krystal Meyers</option>
+              <option value="3">Ian Kelly</option>
+              <option value="4">Harry Cornish</option>
+              <option value="5">Gabrielle Lambert</option>
             </select>
           <div class="mb-3">
             <label for="medicalcondition">Medical Condition</label>
-            <input type="date" id="medicalcondition" class="form-control"/>
+            <input type="text" id="condition-input" class="form-control" placeholder="Enter the patient's reason for admission"/>
           </div>
         </div>
         <div class="modal-footer">
@@ -84,5 +84,5 @@
     myModal.show();
   }
 </script>
-
+<script src="/js/calender.js"></script>
 
