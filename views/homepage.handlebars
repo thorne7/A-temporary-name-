@@ -126,25 +126,25 @@
     </div>
 
 
+<div id="bed-card-container">
+  {{#each beds as |bed| }}
 
-{{#each beds as |bed| }}
+      <div class="bed-card" data-index="{{bed.bed_id}}">
+          <h2>Bed ID: {{bed.bed_id}}</h2>
+          <div>Patient Name: {{bed.patient_name}}</div>
+          <div>Admit Date: {{bed.admit_date}}</div>
+          <div>Dischage Date: {{bed.discharge_Date}}</div>
+          <div>Doctor Name: {{bed.doctor_name}}</div>
+          {{#if @root.show_History}}
+              <div>Medical Condition: {{bed.medical_condition}}</div>
+          {{/if}}
+          <br>
+      </div>
 
-    <div class="=bed-card" data-index="{{bed.bed_id}}">
-        <h2>Bed ID: {{bed.bed_id}}</h2>
-        <div>Patient Name: {{bed.patient_name}}</div>
-        <div>Admit Date: {{bed.admit_date}}</div>
-        <div>Dischage Date: {{bed.discharge_Date}}</div>
-        <div>Doctor Name: {{bed.doctor_name}}</div>
-        {{#if @root.show_History}}
-            <div>Medical Condition: {{bed.medical_condition}}</div>
-        {{/if}}
-        <br>
-    </div>
-
-{{/each}}
+  {{/each}}
+</div>
 <script>
   var myModal = new bootstrap.Modal(document.getElementById('new-patient-modal'))
-  myModal.show();
 </script>
 <script src = "/js/homepage.js">
   
