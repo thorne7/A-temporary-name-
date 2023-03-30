@@ -1,4 +1,4 @@
--- USE hospital_db;
+USE hospital_db;
 
 select b.id, Concat(p.first_name, ' ', p.last_name) as 'Patient Name', p.date_admitted, p.date_discharge, Concat(d.first_name, ' ', d.last_name) as 'Doctor Name', m.condition
 from (((Patient p

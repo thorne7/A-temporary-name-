@@ -24,7 +24,7 @@ const newpatientHandler = async (event) => {
     if (fnVal && lnVal && pcVal && phVal && daVal && ddVal && docVal && cdVal) {
         const response = await fetch('/api/beds', {
             method: 'POST',
-            body: JSON.stringify({ fnVal, lnVal, pcVal, phVal, daVal, ddVal, bedVal }),
+            body: JSON.stringify({ fnVal, lnVal, pcVal, phVal, daVal, ddVal, docVal, bedVal }),
             headers: { 'Content-Type': 'application/json' },
           });
         const responseTwo = await fetch('/api/beds/all', {

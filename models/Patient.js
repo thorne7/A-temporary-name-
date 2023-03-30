@@ -37,6 +37,7 @@ Patient.init(
         },
         doctor_id:{
             type: DataTypes.INTEGER,
+            allowNull: true,
             references: {
                 model: 'doctor',
                 key: 'id'
