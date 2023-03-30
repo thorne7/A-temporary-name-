@@ -24,4 +24,19 @@ router.post('/', async (req, res) => {
     }
   });
 
+  router.get('/all', async (req, res) => {
+    try {
+        const allData = await Patient.findOne({
+            order: [
+                ['id', 'DESC'],
+            ],
+        });
+        simpleData = allData.get({ plain: true });
+        res.status(200).send(JSON.stringify(simpleData));
+    } catch (err) {
+        // handle any errors and send an error response
+        console.error(err);
+        res.status(500).json({ success: false, message: 'Failed to create new patient.' });
+      }
+    });
   module.exports = router;
