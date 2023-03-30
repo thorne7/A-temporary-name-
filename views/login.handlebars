@@ -18,10 +18,23 @@
             <label for="password-login">Password:</label>
             <input class="form-input" type="password" placeholder="User Password" id="password-login" />
             <span class="hideShowPassword">
-              <i id="hide1" class="fa fa-eye"></i>
-              <i id="hide2" class="fa fa-eye-slash"></i>
+                <i id="hide1" class="fa fa-eye"></i>
+                <i id="hide2" class="fa fa-eye-slash"></i>
             </span>
           </div>
+
+          <script>
+            const hideShowPassword = document.querySelector('.hideShowPassword');
+            const passwordInput = document.getElementById('password-login');
+
+            hideShowPassword.addEventListener('click', function () {
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+            } else {
+                passwordInput.type = 'password';
+            }
+            });
+          </script>
           <div class="form-group"></div>
             <button type="submit" type="button" class="login-btn" class="btn btn-primary">Log In</button>
           </div>
