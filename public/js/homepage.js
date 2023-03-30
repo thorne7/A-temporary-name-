@@ -1,3 +1,4 @@
+console.log('Script loaded.');
 
 //Gets main container that holds all bed cards.
 const bedCardContainer = document.getElementById('bed-card-container');
@@ -23,7 +24,7 @@ function displayBedPage(event){
 function getBedCardElement(targetEl){
 
     //Loops through parent elements of the element that is clicked until 'bed-card' element is found.
-    while (targetEl.className !== 'bed-card') {
+    while (targetEl.className !== 'card bed-card mt-4 shadow') {
 
         targetEl = targetEl.parentElement;
         if(targetEl === null) return null;     
