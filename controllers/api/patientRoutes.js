@@ -14,7 +14,9 @@ router.post('/', async (req, res) => {
         doctor_id: req.body.docVal,
         bed_id: req.body.bedVal
         // other patient fields here
-      });
+      })
+      console.log(newPatient);
+
       // send a response indicating success and the new patient's ID
       res.status(201).json({ success: true });
     } catch (err) {
