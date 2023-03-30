@@ -1,6 +1,13 @@
 <header>
   <h1>Bed Booking Display</h1>
-  <button id="book-button" data-target="book-button" data-toggle="modal">Book this Bed</button>
+  <div style="text-align: center;">
+  <button id="book-button" data-target="book-button" data-toggle="modal" style="background-color: #0c3559; color:#fff; border-radius: 5px; box-shadow: 0 9px #999; text-align: center; padding: 10px 20px; margin: 20px; font-size: 30px; border: none; cursor: pointer;"
+    onmouseover="this.style.backgroundColor='#3e8e41';"
+  onmouseout="this.style.backgroundColor='#0c3559';"
+  onmousedown="this.style.backgroundColor='#3e8e41'; box-shadow: 0 5px #666; transform: translateY(4px);"
+  onmouseup="this.style.backgroundColor='#0c3559';"
+  >Book this Bed</button>
+  </div>
 </header>
 <div id="calendar"></div>
 <div class="modal fade" id="new-patient-modal" tabindex="-1" aria-labelledby="new-patient-modal-label" aria-hidden="true">
