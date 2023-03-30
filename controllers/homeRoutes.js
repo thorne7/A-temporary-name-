@@ -115,7 +115,7 @@ async function getBedData(){
         for (let i = 1; i <= totalBeds; i++) {
 
             //Checks whether the bed id already exists or not.
-            if(!beds.some(data => data.bed_id === i)){
+            if(!beds.some((bed) => bed.bed_id === i.toString())){
             
                 const data = {
                     bed_id: `${i}`,
@@ -130,6 +130,9 @@ async function getBedData(){
             }
         }
     }
+
+    //Sorts the array by bed number.
+    beds.sort(function(a, b){return a.bed_id - b.bed_id});
 
     //console.log(beds);
 
