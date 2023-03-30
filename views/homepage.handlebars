@@ -1,8 +1,8 @@
 <h1 class="text-center text-danger border-bottom mt-2">Home Page</h1>
 
-<div class="d-flex flex-wrap">
+<div class="d-flex flex-wrap" id="bed-card-container">
   {{#each beds as |bed| }}
-    <div class="card bed-card shadow m-4" style="width: 300px;">
+    <div class="card bed-card shadow m-4" style="width: 300px;" data-index="{{bed.bed_id}}">
       <h2 class="card-header bg-info text-white">Bed ID: {{bed.bed_id}}</h2>
       <div class="card-body ">
         <ul class="list-group"></ul>
@@ -19,6 +19,8 @@
     </div>
   {{/each}}
 </div>
+
+<script src = "/js/homepage.js"></script>
 
 
 

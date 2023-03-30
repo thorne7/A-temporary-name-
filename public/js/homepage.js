@@ -9,6 +9,7 @@ bedCardContainer.addEventListener('click', displayBedPage);
 function displayBedPage(event){
 
     event.preventDefault();
+    
 
     //Gets the 'bed-card' element for the bed.
     let bedCardEl = getBedCardElement(event.target);
@@ -24,7 +25,7 @@ function displayBedPage(event){
 function getBedCardElement(targetEl){
 
     //Loops through parent elements of the element that is clicked until 'bed-card' element is found.
-    while (targetEl.className !== 'card bed-card mt-4 shadow') {
+    while (targetEl.className !== 'card bed-card shadow m-4') {
 
         targetEl = targetEl.parentElement;
         if(targetEl === null) return null;     
