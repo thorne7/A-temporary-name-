@@ -5,15 +5,8 @@ router.post('/', async (req, res) => {
     try {
       // create a new patient object with data from the request body
       const newRecord = MedicalRecord.create({
-        first_name: req.body.fnVal,
-        last_name: req.body.lnVal,
-        postcode: req.body.pcVal,
-        phone: req.body.phVal,
-        date_admitted: new Date(req.body.daVal),
-        date_discharge: new Date(req.body.ddVal),
-        doctor_id: req.body.docVal,
-        bed_id: req.body.bedVal
-        // other patient fields here
+        condition: req.body.cdVal,
+        patient_id: req.body.pID,
       });
       // send a response indicating success and the new patient's ID
       res.status(201).json({ success: true });
@@ -23,7 +16,5 @@ router.post('/', async (req, res) => {
       res.status(500).json({ success: false, message: 'Failed to create new patient.' });
     }
   });
-
-  module.exports = router;
 
 module.exports = router;
