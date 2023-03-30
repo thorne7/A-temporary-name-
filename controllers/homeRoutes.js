@@ -111,19 +111,23 @@ async function getBedData(){
     //If not all beds are allocated, adds remaining empty beds.
     if(beds.length < 10){
 
-        //Runs the loop from bed allocated to 10.
-        for (let i = beds.length; i < totalBeds; i++) {
+        //Runs the loop to add remaining beds.
+        for (let i = 1; i <= totalBeds; i++) {
+
+            //Checks whether the bed id already exists or not.
+            if(!beds.some(data => data.bed_id === i)){
             
-            const data = {
-                bed_id: `${i + 1}`,
-                patient_name: '',
-                admit_date: '',
-                discharge_Date:'',      
-                doctor_name: '',
-                medical_condition: ''
-            };
-            
-            beds.push(data);
+                const data = {
+                    bed_id: `${i}`,
+                    patient_name: '',
+                    admit_date: '',
+                    discharge_Date:'',      
+                    doctor_name: '',
+                    medical_condition: ''
+                };
+                
+                beds.push(data);
+            }
         }
     }
 
