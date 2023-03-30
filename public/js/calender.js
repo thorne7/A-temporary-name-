@@ -27,13 +27,17 @@ const newpatientHandler = async (event) => {
             body: JSON.stringify({ fnVal, lnVal, pcVal, phVal, daVal, ddVal, bedVal }),
             headers: { 'Content-Type': 'application/json' },
           });
-        // const responseTwo = await fetch('/api/beds', {
-        //     method: 'POST',
-        //     body: JSON.stringify({ fnVal, lnVal, pcVal, phVal, daVal, ddVal, bedVal }),
-        //     headers: { 'Content-Type': 'application/json' },
-        //   });
-
-
+        const responseTwo = await fetch('/api/beds/all', {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json'},
+          })
+          .then(response => response.json());
+          var pID = responseTwo.id;
+          const responseThree = await fetch('/api/records', {
+            method: 'POST',
+            body: JSON.stringify({ cdVal, pID }),
+            headers: { 'Content-Type': 'application/json' },
+          });
     } else {
         console.log('Please complete all fields');
     }
