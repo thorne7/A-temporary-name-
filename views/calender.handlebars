@@ -1,9 +1,16 @@
 <header>
-  <h1>Bed Booking Display</h1>
-  <button id="book-button" data-target="book-button" data-toggle="modal">Book this Bed</button>
+  <h1 id="Bed-display"></h1>
+  <div style="text-align: center;">
+    <button id="book-button" data-target="book-button" data-toggle="modal"
+      style="background-color: #0c3559; color:#fff; border-radius: 5px; box-shadow: 0 9px #999; text-align: center; padding: 10px 20px; margin: 20px; font-size: 30px; border: none; cursor: pointer;"
+      onmouseover="this.style.backgroundColor='#3e8e41';" onmouseout="this.style.backgroundColor='#0c3559';"
+      onmousedown="this.style.backgroundColor='#3e8e41'; box-shadow: 0 5px #666; transform: translateY(4px);"
+      onmouseup="this.style.backgroundColor='#0c3559';">Book this Bed</button>
+  </div>
 </header>
 <div id="calendar"></div>
-<div class="modal fade" id="new-patient-modal" tabindex="-1" aria-labelledby="new-patient-modal-label" aria-hidden="true">
+<div class="modal fade" id="new-patient-modal" tabindex="-1" aria-labelledby="new-patient-modal-label"
+  aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <form id="new-patient-form">
@@ -14,27 +21,30 @@
         <div class="modal-body">
           <div class="mb-3">
             <label for="patient-firstname-input">Patient first Name</label>
-              <input type="text" id="patient-firstname-input" class="form-control" placeholder="Enter the patient's first name"/>
+            <input type="text" id="patient-firstname-input" class="form-control"
+              placeholder="Enter the patient's first name" />
           </div>
           <div class="mb-3">
             <label for="patient-secondname-input">Patient second Name</label>
-            <input type="text" id="patient-secondname-input" class="form-control" placeholder="Enter the patient's second name"/>
+            <input type="text" id="patient-secondname-input" class="form-control"
+              placeholder="Enter the patient's second name" />
           </div>
           <div class="mb-3">
             <label for="postcode">Postcode</label>
-            <input type="text" id="postcode" class="form-control" placeholder="Enter the patient's postcode"/>
+            <input type="text" id="postcode" class="form-control" placeholder="Enter the patient's postcode" />
           </div>
           <div class="mb-3">
             <label for="phone">Patient's phone number</label>
-            <input type="text" id="patientphonenumber" class="form-control" placeholder="Enter the patient's phone number"/>
+            <input type="text" id="patientphonenumber" class="form-control"
+              placeholder="Enter the patient's phone number" />
           </div>
           <div class="mb-3">
             <label for="dateadmitted">Date admitted</label>
-            <input type="date" id="date-admit-input" class="form-control"/>
+            <input type="date" id="date-admit-input" class="form-control" />
           </div>
           <div class="mb-3">
             <label for="datedischarged">Date discharged</label>
-            <input type="date" id="date-discharge-input" class="form-control"/>
+            <input type="date" id="date-discharge-input" class="form-control" />
           </div>
             <select id="doctor-type" class="form-select">
               <option value= "1">Stewart Johnson</option>
@@ -45,7 +55,8 @@
             </select>
           <div class="mb-3">
             <label for="medicalcondition">Medical Condition</label>
-            <input type="text" id="condition-input" class="form-control" placeholder="Enter the patient's reason for admission"/>
+            <input type="text" id="condition-input" class="form-control"
+              placeholder="Enter the patient's reason for admission" />
           </div>
         </div>
         <div class="modal-footer">
@@ -56,33 +67,35 @@
     </div>
   </div>
 </div>
-    <script>
-    /// this gets rendered into the head of the calender page.
-      document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
-        console.log(calendarEl);
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-          initialView: 'dayGridMonth',
-          initialDate: '2023-02-07',
-          headerToolbar: {
-          left: 'prev,next today',
-          center: 'title',
-          right: 'dayGridMonth,timeGridWeek,timeGridDay'
-          },
-            events: 
-            {{{data}}}
-        });    
-        calendar.render();
+<script>
+  /// this gets rendered into the head of the calender page.
+  document.addEventListener('DOMContentLoaded', function () {
+    var calendarEl = document.getElementById('calendar');
+    var bedDisplay = document.getElementById('Bed-display');
+    const path = document.location.pathname.substring(document.location.pathname.lastIndexOf('/') + 1);
+    bedDisplay.innerHTML = "Bed Number: " + path;
+    console.log(calendarEl);
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth',
+      initialDate: '2023-02-07',
+      headerToolbar: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'dayGridMonth,timeGridWeek,timeGridDay'
+      },
+      events:
+        {{{ data }}}
+        });
+  calendar.render();
       });
-  </script>
-  <script>
+</script>
+<script>
   var myModal = new bootstrap.Modal(document.getElementById('new-patient-modal'))
   var showButton = document.getElementById('book-button');
-    myModal.hide();
-  showButton.addEventListener("click", showModal); 
+  myModal.hide();
+  showButton.addEventListener("click", showModal);
   function showModal() {
     myModal.show();
   }
 </script>
 <script src="/js/calender.js"></script>
-
