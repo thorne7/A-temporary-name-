@@ -99,7 +99,7 @@ async function getBedData(){
                 bed_id: `${bedInfo['Bed ID']}`,
                 patient_name: `${bedInfo['First Name']} ${bedInfo['Last Name']}`,
                 admit_date: `${bedInfo['Admit Date'].toLocaleDateString()}`,
-                discharge_Date: `${bedInfo['Dischage Date'].toLocaleDateString()}`,       
+                discharge_date: `${bedInfo['Dischage Date'].toLocaleDateString()}`,       
                 doctor_name: `${bedInfo.doctor['First Name']} ${bedInfo.doctor['Last Name']}`,
                 medical_condition: `${bedInfo.medical_record['Medical Condition']}`
             };
