@@ -99,7 +99,7 @@ async function getBedData(){
                 bed_id: `${bedInfo['Bed ID']}`,
                 patient_name: `${bedInfo['First Name']} ${bedInfo['Last Name']}`,
                 admit_date: `${bedInfo['Admit Date'].toLocaleDateString()}`,
-                discharge_Date: `${bedInfo['Dischage Date'].toLocaleDateString()}`,       
+                discharge_date: `${bedInfo['Dischage Date'].toLocaleDateString()}`,       
                 doctor_name: `${bedInfo.doctor['First Name']} ${bedInfo.doctor['Last Name']}`,
                 medical_condition: `${bedInfo.medical_record['Medical Condition']}`
             };
@@ -111,21 +111,28 @@ async function getBedData(){
     //If not all beds are allocated, adds remaining empty beds.
     if(beds.length < 10){
 
-        //Runs the loop from bed allocated to 10.
-        for (let i = beds.length; i < totalBeds; i++) {
+        //Runs the loop to add remaining beds.
+        for (let i = 1; i <= totalBeds; i++) {
+
+            //Checks whether the bed id already exists or not.
+            if(!beds.some((bed) => bed.bed_id === i.toString())){
             
-            const data = {
-                bed_id: `${i + 1}`,
-                patient_name: '',
-                admit_date: '',
-                discharge_Date:'',      
-                doctor_name: '',
-                medical_condition: ''
-            };
-            
-            beds.push(data);
+                const data = {
+                    bed_id: `${i}`,
+                    patient_name: '',
+                    admit_date: '',
+                    discharge_Date:'',      
+                    doctor_name: '',
+                    medical_condition: ''
+                };
+                
+                beds.push(data);
+            }
         }
     }
+
+    //Sorts the array by bed number.
+    beds.sort(function(a, b){return a.bed_id - b.bed_id});
 
     //console.log(beds);
 
