@@ -15,108 +15,82 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link rel="stylesheet" href="/css/style.css" />
     <title>Hostipal Management</title>
+    <script
+      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+      crossorigin="anonymous">
+    </script>
 </head>
 <body>
     <header>
         <!-- create and apply a custom class name "custom-navbar" -->
-      <nav class="navbar navbar-expand-lg custom-navbar navbar-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Hospital Boot Camp</a>
-            <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbar"
-            aria-controls="navbar"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-            >
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <!-- we need to define if we'll insert any link on Navbar -->
-            <div class="collapse navbar-collapse" id="navbar">
-            <div class="navbar-nav ms-auto">
-                <a class="nav-item nav-link"  href="#">Log in</a>
-                <a class="nav-item nav-link" href="#">Temporary btn</a>
+        <nav class="navbar navbar-expand-lg custom-navbar navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand">Hospital Boot Camp</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar">
+                    <div class="navbar-nav ms-auto">
+                        <!-- a class="nav-item nav-link" href="#">About</a -->
+                    </div>
+                    <div class="navbar-nav ml-auto">
+                        {{#if logged_in}}
+                            <button class="btn btn-lg custom-btn mt-2" id="logout">Logout</button>
+                        {{/if}}
+                    </div>
+                </div>
             </div>
-            </div>
-        </div>
-      </nav>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"
-></script>
- <script
-      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
-      crossorigin="anonymous"
-></script>
- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-</head>
-<body>
-    <header>
-        <nav>
-            {{#if logged_in}}
-                <button class="btn btn-lg custom-btn mt-2" id="logout">Logout</button>
-            {{/if}}
-        </nav>
+        </nav> 
     </header>
 
     <main>
         {{{ body }}}
-    </main>
+    </main>    
 
     <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
 
         <div class="footer-top">
-        <div class="container">
+         <div class="container">
             <div class="row">
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><i class="bx bx-chevron-right"></i><a href="#">About</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 footer-contact">
+                    <h4>Main Info</h4>
+                    <p>
+                    Adelaide, SA | Australia <br>
+                    Brisbaine, QLD | Australia <br>
+                    <strong>Phone:</strong><br> 0 1111 2222 3333 <br>
+                    <strong>Email:</strong><br>hospital@management.com.au<br>
+                    </p>
+                </div>
 
-            <div class="col-lg-3 col-md-6 footer-links">
-                <h4>Useful Links</h4>
-                <ul>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">Log in</a></li>
-                    <li><i class="bx bx-chevron-right"></i> <a href="#">Temporary btn</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-3 col-md-6 footer-contact">
-                <h4>Main Info</h4>
-                <p>
-                Adelaide, SA | Australia <br>
-                Brisbaine, QLD | Australia <br>
-                <strong>Phone:</strong><br> 8 1111 2222 3333 <br>
-                <strong>Email:</strong><br>hospital@management.com.au<br>
-                </p>
-
-            </div>
-
-            <div class="col-lg-3 col-md-6 footer-info">
-                <h3>Hospital Management</h3>
-                <p>Our Links!</p>
-                <div class="social-links mt-3">
-                <a href="https://github.com/thorne7/A-temporary-name-" class="GitHub" title="Repository"><i class="bi bi-github"></i></a>
+                <div class="col-lg-3 col-md-6 footer-info">
+                    <h3>Hospital Management</h3>
+                    <p>Our Links!</p>
+                    <div class="social-links mt-3">
+                    <a href="https://github.com/thorne7/A-temporary-name-" class="GitHub" title="Repository"><i class="bi bi-github"></i></a>
+                    </div>
                 </div>
             </div>
-
-            </div>
-        </div>
+         </div>
         </div>
 
         <div class="container">
-        <div class="copyright">
-            &copy;<strong><span> Hospital Management</span></strong>. All Rights Reserved
-        </div>
+          <div class="copyright">
+             &copy;<strong><span> Hospital Management</span></strong>. All Rights Reserved
+          </div>
         </div>
     </footer>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"
-  ></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
   {{#if logged_in}}
     <script src="/js/logout.js"></script>
   {{/if}}
 </body>
 </html>
+    
