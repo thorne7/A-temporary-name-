@@ -74,7 +74,6 @@
     var bedDisplay = document.getElementById('Bed-display');
     const path = document.location.pathname.substring(document.location.pathname.lastIndexOf('/') + 1);
     bedDisplay.innerHTML = "Bed Number: " + path;
-    console.log(calendarEl);
     var calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: 'dayGridMonth',
       initialDate: '2023-02-07',
@@ -87,6 +86,7 @@
         {{{ data }}}
         });
   calendar.render();
+  calendar.setOption('aspectRatio', 2.2);
       });
 </script>
 <script>
