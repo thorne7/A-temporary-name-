@@ -1,4 +1,3 @@
-
 # Patient Management System
 
 ![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)
@@ -24,6 +23,7 @@ Patient management system that quickly identifies a bed that a patient could be 
 * [Deployment](#deployment)
 * [Screenshots](#screenshots)
 * [License](#license)
+* [Contributors](#contributors)
 
 ## User Story
 - As a doctor I want to be able to log into a secure site where I can access patients’ information and be able to view what bed their admission details. 
@@ -32,7 +32,6 @@ Patient management system that quickly identifies a bed that a patient could be 
 
 
 ## Usage
-
 - When user launches the home page, user is redirected to login page if not logged in already.
 - When log in page is launched, a form is displayed to enter email address and password to login.
 - When user logs in, user is presented with a home page displaying all bed information with patient details.
@@ -59,6 +58,22 @@ Home Page
 Calendar Page
 
 ![Calendar Page](public/images/Calendarpage.png)
+
+Add New Patient Form
+
+![Add New Patient Form]()
+
+## Contributors
+
+Breno Ferreira Campos: https://github.com/Brenofc1
+
+Daisy Chemasas: https://github.com/Chemasas
+
+Darien Hallam: https://github.com/thorne7
+
+Nilesh Patel: https://github.com/NileshPatel83
+
+Timothy Van Mook-Letcher: https://github.com/TVML24
 
 ## License
 The project is licensed under: MIT.
