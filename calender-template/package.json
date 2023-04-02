@@ -1,7 +1,0 @@
-{
-  "dependencies": {
-    "fullcalendar": "^6.1.4",
-    "install": "^0.13.0",
-    "npm": "^9.6.2"
-  }
-}
