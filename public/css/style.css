@@ -337,4 +337,8 @@
     color: #a2cce3;
   }
   
-  
+  #warning-text {
+    color: red;
+    font-size: 32px;
+    font-weight: bold;
+  }

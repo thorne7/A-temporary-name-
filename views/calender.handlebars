@@ -1,5 +1,8 @@
 <header>
   <h1 id="Bed-display"></h1>
+  <div class="initial-hide">
+    <p id="warning-text"></p>
+  </div>
   <div style="text-align: center;">
     <button id="book-button" data-target="book-button" data-toggle="modal"
       style="background-color: #0c3559; color:#fff; border-radius: 5px; box-shadow: 0 9px #999; text-align: center; padding: 10px 20px; margin: 20px; font-size: 30px; border: none; cursor: pointer;"
@@ -15,17 +18,17 @@
     <div class="modal-content">
       <form id="new-patient-form">
         <div class="modal-header custom-modal-header">
-          <h5 class="modal-title" id="new-patient-modal-label">Add a new Patient</h5>
+          <h5 class="modal-title" id="new-patient-modal-label">Add a New Patient</h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <div class="mb-3">
-            <label for="patient-firstname-input">Patient first Name</label>
+            <label for="patient-firstname-input">Patient's First Name</label>
             <input type="text" id="patient-firstname-input" class="form-control"
               placeholder="Enter the patient's first name" />
           </div>
           <div class="mb-3">
-            <label for="patient-secondname-input">Patient second Name</label>
+            <label for="patient-secondname-input">Patient's Second Name</label>
             <input type="text" id="patient-secondname-input" class="form-control"
               placeholder="Enter the patient's second name" />
           </div>
@@ -34,18 +37,20 @@
             <input type="text" id="postcode" class="form-control" placeholder="Enter the patient's postcode" />
           </div>
           <div class="mb-3">
-            <label for="phone">Patient's phone number</label>
+            <label for="phone">Patient's Phone Number</label>
             <input type="text" id="patientphonenumber" class="form-control"
               placeholder="Enter the patient's phone number" />
           </div>
           <div class="mb-3">
-            <label for="dateadmitted">Date admitted</label>
+            <label for="dateadmitted">Date Admitted</label>
             <input type="date" id="date-admit-input" class="form-control" />
           </div>
           <div class="mb-3">
-            <label for="datedischarged">Date discharged</label>
+            <label for="datedischarged">Date Discharged</label>
             <input type="date" id="date-discharge-input" class="form-control" />
           </div>
+          <div class="mb-3">
+            <label for="doctor-type">Attending Physician</label>
             <select id="doctor-type" class="form-select">
               <option value= "1">Stewart Johnson</option>
               <option value= "2">Krystal Meyers</option>
@@ -53,8 +58,9 @@
               <option value= "4">Harry Cornish</option>
               <option value= "5">Gabrielle Lambert</option>
             </select>
+          </div>
           <div class="mb-3">
-            <label for="medicalcondition">Medical Condition</label>
+            <label for="condition-input">Medical Condition</label>
             <input type="text" id="condition-input" class="form-control"
               placeholder="Enter the patient's reason for admission" />
           </div>
@@ -76,7 +82,7 @@
     bedDisplay.innerHTML = "Bed Number: " + path;
     var calendar = new FullCalendar.Calendar(calendarEl, {
       initialView: 'dayGridMonth',
-      initialDate: '2023-02-07',
+      initialDate: '2023-04-02',
       headerToolbar: {
         left: 'prev,next today',
         center: 'title',
