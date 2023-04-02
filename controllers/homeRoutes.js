@@ -4,6 +4,7 @@ const router = require('express').Router();
 const { Doctor, MedicalRecord, Patient} = require('../models');
 const userAuth = require('../utils/auth');
 const role = require('../utils/constants');
+const { Op } = require('sequelize');
 
 router.get('/', userAuth, async (req, res) => {
 
@@ -58,6 +59,8 @@ async function getBedData(){
 
     let beds = [];
 
+    const today = new Date();
+
     //Sqquelize query to get bed id, patient data and doctor name.
     const bedData = await Patient.findAll({
         attributes:[
@@ -82,18 +85,37 @@ async function getBedData(){
                 required: true
             }
         ],
-        order: sequelize.col('bed_id')
+
+        //Where discharge date is greater or equal than today and bed id is not null.
+        where:{
+            date_discharge :{
+                [Op.gte]: today
+            },
+            bed_id:{
+                [Op.ne]: null
+            }
+        },
+
+        //Orders the data by discharge date.
+        //This way, only first patient is added to final array
+        //If the bed has two patients.
+        //First patient will be before the second patient.
+        order: sequelize.col('date_discharge')
     });
 
     // Serialize data so the template can read it
     const allBeds = bedData.map((bed) => bed.get({ plain: true }));
 
-    //Loop through the data and generate new array for home page.
-    for (let i = 0; i < allBeds.length; i++) {
+    //Runs the loop to add remaining beds.
+    for (let i = 1; i <= totalBeds; i++){
 
-        const bedInfo = allBeds[i];
+        //Tries to find the index of an item in beds record.
+        const index = allBeds.findIndex((bed) => bed['Bed ID'] == i);
 
-        if(bedInfo['Bed ID'] !== null){
+        //If the record is found, adds the record to beds list.
+        if(index !== -1){
+
+            const bedInfo = allBeds[index];
 
             const data = {
                 bed_id: `${bedInfo['Bed ID']}`,
@@ -103,38 +125,27 @@ async function getBedData(){
                 doctor_name: `${bedInfo.doctor['First Name']} ${bedInfo.doctor['Last Name']}`,
                 medical_condition: `${bedInfo.medical_record['Medical Condition']}`
             };
-            
+                
             beds.push(data);
         }
-    }
 
-    //If not all beds are allocated, adds remaining empty beds.
-    if(beds.length < 10){
-
-        //Runs the loop to add remaining beds.
-        for (let i = 1; i <= totalBeds; i++) {
-
-            //Checks whether the bed id already exists or not.
-            if(!beds.some((bed) => bed.bed_id === i.toString())){
+        //If the record is not found, empty data is added to beds list.
+        else{
+            const data = {
+                bed_id: `${i}`,
+                patient_name: '',
+                admit_date: '',
+                discharge_Date:'',      
+                doctor_name: '',
+                medical_condition: ''
+            };
             
-                const data = {
-                    bed_id: `${i}`,
-                    patient_name: '',
-                    admit_date: '',
-                    discharge_Date:'',      
-                    doctor_name: '',
-                    medical_condition: ''
-                };
-                
-                beds.push(data);
-            }
-        }
+            beds.push(data);
+        }     
     }
 
     //Sorts the array by bed number.
     beds.sort(function(a, b){return a.bed_id - b.bed_id});
-
-    //console.log(beds);
 
     return beds;
 }
