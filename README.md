@@ -49,15 +49,15 @@ Deployed webpage:https://hospitalmanagementsystem.herokuapp.com/
 ## Screenshots
 Login Page
 
-![Login Page](public/images/Loginpage.png)
+![Login Page](public/images/LoginPage.png)
 
 Home Page
 
-![Home Page](public/images/Homepage.png)
+![Home Page](public/images/HomePage.png)
 
 Calendar Page
 
-![Calendar Page](public/images/Calendarpage.png)
+![Calendar Page](public/images/CalendarPage.png)
 
 Add New Patient Form
 
