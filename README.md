@@ -44,7 +44,7 @@ Patient management system that quickly identifies a bed that a patient could be 
 - Patient information is added to the database and displayed on the calendar page.
 
 ## Deployment
-Deployed webpage:https://dashboard.heroku.com/apps/hospitalmanagementsystem
+Deployed webpage:https://hospitalmanagementsystem.herokuapp.com/
 
 ## Screenshots
 Login Page
@@ -61,7 +61,7 @@ Calendar Page
 
 Add New Patient Form
 
-![Add New Patient Form]()
+![Add New Patient Form](public/images/AddNewPatient.png)
 
 ## Contributors
 
