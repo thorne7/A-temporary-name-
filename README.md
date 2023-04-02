@@ -53,7 +53,7 @@ Login Page
 
 Home Page
 
-![Home Page](public/images/HomePage.png)
+![Home Page](public/images/Homepage.png)
 
 Calendar Page
 
