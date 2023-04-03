@@ -19,7 +19,7 @@ router.get('/', userAuth, async (req, res) => {
         if(req.session.role === roles[0]) showHistory = true;
 
         //Renders home page with bed data.
-        res.render('homepage', {beds:beds, show_History: showHistory, logged_in: req.session.logged_in});
+        res.render('homepage', {beds:beds, show_History: showHistory, logged_in: req.session.logged_in, showDashboard: false});
 
     } catch (err) {
     res.status(500).json(err);
@@ -42,7 +42,7 @@ router.get('/login', async (req, res) => {
             if(req.session.role === roles[0]) showHistory = true;
 
             //Renders home page with bed data.
-            res.render('homepage', {beds:beds, show_History: showHistory, logged_in: req.session.logged_in});
+            res.render('homepage', {beds:beds, show_History: showHistory, logged_in: req.session.logged_in, showDashboard: false});
             return;
         }
 

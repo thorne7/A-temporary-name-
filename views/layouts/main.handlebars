@@ -33,12 +33,16 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbar">
                     <div class="navbar-nav ms-auto">
-                        <!-- a class="nav-item nav-link" href="#">About</a -->
+                        <a class="nav-item nav-link mt-2" href="#">About</a>
                     </div>
                     <div class="navbar-nav ml-auto">
-                        {{#if logged_in}}
-                            <button class="btn btn-lg custom-btn mt-2" id="logout">Logout</button>
+                         {{#if showDashboard}}            
+                            <a class="nav-item nav-link mt-2" id="show-dashboard" href="/">Dashboard</a>
                         {{/if}}
+
+                        {{#if logged_in}}            
+                            <a class="nav-item nav-link mt-2" id="logout" href="#">Logout</a>
+                        {{/if}}                       
                     </div>
                 </div>
             </div>

@@ -6,15 +6,13 @@ router.get('/:id', userAuth, async (req, res) => {
   
   try {
     const data = await getData(req);
-    res.render('calender', {data:JSON.stringify(data)});
+    res.render('calender', {data:JSON.stringify(data), logged_in: req.session.logged_in, showDashboard: true});
   
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
-
-
 
 async function getData(req) {
   patientEvents = [];
