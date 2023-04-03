@@ -85,6 +85,10 @@ async function validateCheck(req) {
         return false;
       } else if(date_disch > startDate && date_disch < endDate){
         return false;
+      } else if (startDate > date_admit && startDate < date_disch){
+        return false;
+      }else if (endDate > date_admit && endDate < date_disch){
+        return false;
       }
     }
     return true;
